@@ -2,7 +2,7 @@ use crate::errors::ThemeError;
 use std::fs;
 use std::io::{self, Write};
 
-fn list_themes(directory: &str) -> Result<Vec<String>, ThemeError> {
+pub fn list_themes(directory: &str) -> Result<Vec<String>, ThemeError> {
     let paths = fs::read_dir(directory)?;
     let mut themes = Vec::new();
 
@@ -18,7 +18,7 @@ fn list_themes(directory: &str) -> Result<Vec<String>, ThemeError> {
     Ok(themes)
 }
 
-fn select_theme(themes: &[String]) -> Result<String, ThemeError> {
+pub fn select_theme(themes: &[String]) -> Result<String, ThemeError> {
     println!("Available themes:");
     for (i, theme) in themes.iter().enumerate() {
         println!("{}: {}", i + 1, theme);
