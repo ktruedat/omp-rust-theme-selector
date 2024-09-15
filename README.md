@@ -1,0 +1,1 @@
+Simple CLI App to select theme for the oh-my-posh terminal customization utility.
